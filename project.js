@@ -13,8 +13,13 @@ const prompt = require("prompt-sync") ();
 
 // const x = deposit()
 const deposit = () => {
-    const depositAmount = prompt("Enter a deposit amount: ")
-}
+    const depositAmount = prompt("Enter a deposit amount: ") // convert this string to a number
+    const numberDepositAmount = parseFloat(depositAmount);
+
+    if (isNaN(numberDepositAmount) || numberDepositAmount <= 0) {
+        console.log("Invalid deposit amount, try again.");
+    } // run node project.js to test an invalid input
+};
 
 deposit();
 
